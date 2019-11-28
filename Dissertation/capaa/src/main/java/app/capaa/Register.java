@@ -65,6 +65,7 @@ public class Register extends AppCompatActivity
                 String s2 = Password.getText().toString();
                 String s3 = ConfirmPassword.getText().toString();
 
+
                 if(s1.equals("")||s2.equals("")||s3.equals("")){
                     Toast.makeText(getApplicationContext(),"Fields are empty!", Toast.LENGTH_SHORT).show();
                 }
@@ -77,7 +78,7 @@ public class Register extends AppCompatActivity
                             if (TCbuttonClicked) {
 
                                 if (checkEmail) {
-                                    Boolean insert = db.insert(s1, s2);
+                                    Boolean insert = db.insert(s1, s2, 0);
                                     Toast.makeText(getApplicationContext(), "Registration Successful!", Toast.LENGTH_SHORT).show();
                                     Intent accountsIntent = new Intent(Register.this, Home.class);
                                     startActivity(accountsIntent);
@@ -108,4 +109,6 @@ public class Register extends AppCompatActivity
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+
 }

@@ -16,25 +16,25 @@ import android.widget.TextView;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Toast;
-import android.app.Activity;
-import android.content.Context;
-import android.hardware.*;
-import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class HomeFragment extends Fragment implements SensorEventListener {
+public class HomeFragment extends Fragment  {
 
     private SensorManager sensorManager;
     private TextView count;
     boolean activityRunning;
     private Context ctx;
+    private TextView totalSteps;
+    private int steps =1;
+    private int Initials;
 
     private Button ClearSteps;
 
@@ -46,6 +46,12 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         count = (TextView) getView().findViewById(R.id.StepCounter);
         sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
+
+        totalSteps = (TextView) getView().findViewById(R.id.totalSteps);
+//        //totalSteps.setText(String.valueOf(sensorEvent.values[0]));
+//        totalSteps.setText(steps);
+        //getSteps();
+
 
 //        ClearSteps = (Button) getView().findViewById(R.id.ClearSteps);
 //        ClearSteps.setOnClickListener(new View.OnClickListener() {
@@ -60,43 +66,65 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+       // totalSteps = (TextView) getView().findViewById(R.id.totalSteps);
+        //totalSteps.setText(String.valueOf(sensorEvent.values[0]));
+       //totalSteps.setText(steps);
+        totalSteps = (TextView) rootView.findViewById(R.id.totalSteps);
+        //totalSteps.setText(getSteps());
+        //totalSteps.setText(steps);
+        //IV = (ImageView) rootView.findViewById(R.id.Torso);
+
+
+        return rootView;
+
 
     }
+//
+//    @Override
+//    public void onResume(){
+//        super.onResume();
+//        activityRunning = true;
+//        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+//        if(countSensor != null){
+//            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+//        }else{
+//             // Toast.makeText(ctx, "Count sensor not available", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(), "Count sensor not available",
+//                    Toast.LENGTH_LONG).show();
+//            // Toast.makeText(getApplicationContext(),"Incorrect email or password",Toast.LENGTH_SHORT).show();
+//
+//        }
+//    }
+//
+//    @Override
+//    public void onPause(){
+//        super.onPause();
+//        activityRunning = false;
+//    }
+//
+//    @Override
+//    public void onSensorChanged(SensorEvent sensorEvent) {
+//        if(activityRunning){
+//            count.setText(String.valueOf(sensorEvent.values[0]));
+//            steps = Integer.valueOf((int)sensorEvent.values[0]);
+//            setSteps(steps);
+//        }
+//    }
+//
+//
+//    @Override
+//    public void onAccuracyChanged(Sensor sensor, int i) {
+//    }
+//
+//
+//    public int getSteps(){
+//        return steps;
+//    }
+//
+//    public void setSteps(int step){
+//        steps = steps;
+//    }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        activityRunning = true;
-        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-        if(countSensor != null){
-            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
-        }else{
-             // Toast.makeText(ctx, "Count sensor not available", Toast.LENGTH_LONG).show();
-                Toast.makeText(getActivity(), "Count sensor not available",
-                    Toast.LENGTH_LONG).show();
-//            Toast.makeText(getApplicationContext(),"Incorrect email or password",Toast.LENGTH_SHORT).show();
-
-
-        }
-    }
-
-    @Override
-    public void onPause(){
-        super.onPause();
-        activityRunning = false;
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-        if(activityRunning){
-            count.setText(String.valueOf(sensorEvent.values[0]));
-        }
-
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i) {
-
-    }
 }
