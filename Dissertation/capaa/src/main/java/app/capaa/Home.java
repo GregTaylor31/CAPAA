@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.HashMap;
@@ -107,9 +108,11 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
         stepsView = (TextView) findViewById(R.id.steps);
 
         //totalStepsText = (TextView) findViewById(R.id.totalStepsText);
+       // db = new DatabaseHelper(this);
+      //  db.getTorsoFromDb(getEmail());
 
 
-
+       // Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
 
 //        sessionManager.checkLogin();

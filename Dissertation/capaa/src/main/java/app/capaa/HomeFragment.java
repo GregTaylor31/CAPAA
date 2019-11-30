@@ -2,11 +2,14 @@ package app.capaa;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -51,6 +56,11 @@ public class HomeFragment extends Fragment  {
 //        //totalSteps.setText(String.valueOf(sensorEvent.values[0]));
 //        totalSteps.setText(steps);
         //getSteps();
+
+        //String imageDataBytes = Head64String.substring(Head64String.indexOf(",")+1);
+       // InputStream stream = new ByteArrayInputStream(Base64.decode(imageDataBytes.getBytes(), Base64.DEFAULT));
+       // Bitmap bitmap = BitmapFactory.decodeStream(stream);
+       // ImageView IV
 
 
 //        ClearSteps = (Button) getView().findViewById(R.id.ClearSteps);

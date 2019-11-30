@@ -79,8 +79,9 @@ public class Register extends AppCompatActivity
 
                                 if (checkEmail) {
                                     Boolean insert = db.insert(s1, s2, 0);
+                                    db.insertAvatar(s1);
                                     Toast.makeText(getApplicationContext(), "Registration Successful!", Toast.LENGTH_SHORT).show();
-                                    Intent accountsIntent = new Intent(Register.this, Home.class);
+                                    Intent accountsIntent = new Intent(Register.this, Home.class); //error?
                                     startActivity(accountsIntent);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Email Already exists", Toast.LENGTH_SHORT).show();

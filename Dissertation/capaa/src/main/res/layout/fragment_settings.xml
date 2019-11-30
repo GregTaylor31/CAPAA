@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/torso2green" />
+                android:background="@drawable/green_torso" />
 
             <Button
                 android:id="@+id/button1"
@@ -117,18 +117,16 @@
                 android:text="Head"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
-                android:textStyle="bold"
-
-                />
+                android:textStyle="bold" />
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/item2"
                 android:paddingTop="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/head2" />
+                android:layout_gravity="center"/>
+                //android:src="@drawable/brown_head" />
 
 
 
@@ -160,8 +158,7 @@
             android:layout_marginRight="16dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="15dp"
-            app:cardElevation="10dp"
-            >
+            app:cardElevation="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -176,7 +173,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:paddingLeft="10dp"
-                android:text="Green Torso"
+                android:text="Blue Trousers"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -187,7 +184,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/torso2green" />
+                android:layout_marginBottom="45dp"
+                android:background="@drawable/blue_trousers" />
 
             <Button
                 android:layout_width="match_parent"
@@ -231,7 +229,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:paddingLeft="10dp"
-                android:text="Green Torso"
+                android:text="Pink Feet"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -243,7 +241,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/torso2green" />
+                android:layout_marginBottom="65dp"
+                android:background="@drawable/skin_feet" />
 
             <Button
                 android:layout_width="match_parent"

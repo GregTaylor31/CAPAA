@@ -69,6 +69,9 @@ public class SettingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+       // Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(imageView);
+
+
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
