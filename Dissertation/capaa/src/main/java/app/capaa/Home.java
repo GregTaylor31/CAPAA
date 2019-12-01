@@ -50,6 +50,10 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
     private Button ClearSteps;
     DatabaseHelper db;
 
+    private int stepCounter = 0;
+    private int counterSteps = 0;
+    private int stepDetector = 0;
+
     public void communicateWith() {
         if (getStepsFromDB()>= 20){
             avatarFragment.greenTorso();
@@ -173,14 +177,13 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
     public void onResume(){
         super.onResume();
         activityRunning = true;
-        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         if(countSensor != null){
             sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
         }else{
-            // Toast.makeText(ctx, "Count sensor not available", Toast.LENGTH_LONG).show();
             Toast.makeText(getApplicationContext(), "Count sensor not available",
                     Toast.LENGTH_LONG).show();
-            // Toast.makeText(getApplicationContext(),"Incorrect email or password",Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -192,16 +195,20 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        if(activityRunning){
+        Sensor stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+
+        //if(activityRunning){
            // getStepsFromDB();
             //setStepstoTextView(getStepsFromDB());
-            //stepsView.setText(String.valueOf(sensorEvent.values[0]));
-            //steps = steps + 1; //Integer.valueOf((int)sensorEvent.values[0]);
-           // setSteps(steps);
-            updateDatabaseSteps(0,1);
-            //getStepsFromDB();
+           //String Sensorsteps = String.valueOf(sensorEvent.values[0]);
+            //steps = steps + 1;
+
+            int Sensorsteps = Integer.valueOf((int)sensorEvent.values[0]);
+
+            updateDatabaseSteps(0,Sensorsteps);
+
             setStepstoTextView(getStepsFromDB());
-        }
+
     }
 
 
@@ -233,7 +240,7 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
         db = new DatabaseHelper(this);
         Boolean insert = db.updateSteps(currentEmail, currentSteps);
         Toast.makeText(getApplicationContext(), "Steps updated", Toast.LENGTH_SHORT).show();
-        //getStepsFromDB();
+
     }
 
     public int getStepsFromDB(){
