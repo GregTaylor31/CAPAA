@@ -18,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -26,9 +28,11 @@ import androidx.fragment.app.FragmentManager;
 public class SettingsFragment extends Fragment {
 
     public Button button;
+    public ImageView Head;
     public ImageView Torso;
     public ImageView ShopGreenTorso;
     private Communicator interfaceImplementor;
+    public Context context;
 
 
 //    @Override
@@ -69,7 +73,7 @@ public class SettingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       // Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(imageView);
+        ImageView head = (ImageView) getActivity().findViewById(R.id.item2);
 
 
         return inflater.inflate(R.layout.fragment_settings, container, false);

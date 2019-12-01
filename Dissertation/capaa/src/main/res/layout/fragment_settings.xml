@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/green_torso" />
+                android:background="@drawable/zero_torso" />
 
             <Button
                 android:id="@+id/button1"
@@ -122,11 +122,14 @@
 
             <ImageView
                 android:id="@+id/item2"
-                android:paddingTop="30dp"
+                android:paddingTop="50dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
-                //android:src="@drawable/brown_head" />
+                android:layout_gravity="center"
+                android:scaleX="4"
+                android:scaleY="2"
+                android:src="@drawable/yellow_head" />
+
 
 
 
@@ -181,11 +184,16 @@
 
             <ImageView
                 android:id="@+id/imageView3"
+                android:layout_marginBottom="120dp"
+
+
+                android:scaleY="8"
+                android:scaleX="10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="45dp"
-                android:background="@drawable/blue_trousers" />
+
+                android:src="@drawable/blue_trousers" />
 
             <Button
                 android:layout_width="match_parent"
@@ -238,11 +246,13 @@
 
             <ImageView
                 android:id="@+id/imageView4"
+                android:scaleX="10"
+                android:scaleY="2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="65dp"
-                android:background="@drawable/skin_feet" />
+                android:layout_marginBottom="90dp"
+                android:src="@drawable/skin_feet" />
 
             <Button
                 android:layout_width="match_parent"
@@ -300,7 +310,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/torso2green" />
+                android:background="@drawable/zero_torso" />
 
             <Button
                 android:layout_width="match_parent"

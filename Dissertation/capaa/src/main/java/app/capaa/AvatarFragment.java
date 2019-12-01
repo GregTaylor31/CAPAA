@@ -81,7 +81,10 @@ public class AvatarFragment extends Fragment {
 
         if (GreenTorso == true) {
            IV = (ImageView) rootView.findViewById(R.id.Torso);
-           IV.setImageResource(R.drawable.green_torso);
+            IV.setImageResource(R.drawable.zero_torso);
+          // IV.setImageResource(R.drawable.green_torso);
+          // db.updateTorso(Email, 2);
+            db.updateTorso(Email, 3);
 
         }
         return rootView;

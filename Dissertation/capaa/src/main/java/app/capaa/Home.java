@@ -94,7 +94,7 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
 
 
         //lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
-        lblEmail.setText(Html.fromHtml("Welcome: <b>" + email + "</b>"));
+        //lblEmail.setText(Html.fromHtml("Welcome: <b>" + email + "</b>"));
 
        // email;
        // int currentSteps = getSteps();
