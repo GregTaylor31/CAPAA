@@ -66,8 +66,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/green_torso"/>
-<!--                android:background="@drawable/green_torso"-->
-
 
             <Button
                 android:id="@+id/button1"
@@ -97,15 +95,12 @@
             android:layout_marginRight="16dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="15dp"
-            app:cardElevation="10dp"
-
-            >
+            app:cardElevation="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
             </LinearLayout>
 
@@ -121,7 +116,6 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-
             <ImageView
                 android:id="@+id/item2"
                 android:paddingTop="50dp"
@@ -131,9 +125,6 @@
                 android:scaleX="4"
                 android:scaleY="2"
                 android:src="@drawable/yellow_head" />
-
-
-
 
             <Button
                 android:layout_width="match_parent"
@@ -145,6 +136,7 @@
                 android:background="@drawable/register_button"
                 android:shadowColor="@color/colorPrimary"
                 android:text="10,000S Buy"
+                android:id="@+id/button2"
                 android:textColor="@color/white">
 
             </Button>
@@ -300,7 +292,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:paddingLeft="10dp"
-                android:text="Green Torso"
+                android:text="Zero Torso"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -324,6 +316,7 @@
                 android:background="@drawable/register_button"
                 android:shadowColor="@color/colorPrimary"
                 android:text="10,000S Buy"
+                android:id="@+id/button5"
                 android:textColor="@color/white">
 
 

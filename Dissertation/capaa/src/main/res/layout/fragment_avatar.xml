@@ -4,9 +4,7 @@
     android:layout_height="match_parent"
     xmlns:src="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@android:color/holo_orange_dark"
-
-    >
+    android:background="@android:color/holo_orange_dark">
 
     <ImageView
         android:layout_width="500dp"
@@ -28,27 +26,25 @@
         android:id="@+id/Torso">
     </ImageView>
 
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="530dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:id="@+id/Trousers">
+    </ImageView>
 
-    <!--        android:src="@drawable/red_torso" -->
-        <ImageView
-            android:layout_width="500dp"
-            android:layout_height="530dp"
-            android:layout_centerInParent="true"
-            android:orientation="vertical"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:id="@+id/Trousers">
-        </ImageView>
-
-        <ImageView
-            android:layout_width="500dp"
-            android:layout_height="530dp"
-            android:layout_centerInParent="true"
-            android:orientation="vertical"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:id="@+id/Feet">
-        </ImageView>
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="530dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:id="@+id/Feet">
+    </ImageView>
 
     <ImageView
         android:layout_width="500dp"
@@ -63,6 +59,8 @@
         android:background="@drawable/guitar"
         android:visibility="invisible">
     </ImageView>
+
+</RelativeLayout>
 
 
 
@@ -129,4 +127,3 @@
 
 <!--    </LinearLayout>-->
 
-</RelativeLayout>

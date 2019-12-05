@@ -30,6 +30,8 @@ public class AvatarFragment extends Fragment {
     public ImageView IV3;
     public ImageView IV4;
     public Boolean GreenTorso = false;
+    public Boolean ZeroTorso = false;
+    public Boolean YellowHead = false;
     UserSessionManager sessionManager;
     public String Email;
     public int steps;
@@ -80,18 +82,44 @@ public class AvatarFragment extends Fragment {
         //InputStream stream = new ByteArrayInputStream(Base64.decode(imageDataBytes.getBytes(), Base64.DEFAULT));
 
         if (GreenTorso == true) {
-           IV = (ImageView) rootView.findViewById(R.id.Torso);
+            IV = (ImageView) rootView.findViewById(R.id.Torso);
             IV.setImageResource(R.drawable.green_torso);
           // IV.setImageResource(R.drawable.green_torso);
           // db.updateTorso(Email, 2);
             db.updateTorso(Email, 2);
 
         }
+
+        if (ZeroTorso == true){
+            IV = (ImageView) rootView.findViewById(R.id.Torso);
+            IV.setImageResource(R.drawable.zero_torso);
+            db.updateTorso(Email, 3);
+        }
+
+        if (YellowHead == true){
+            IV = (ImageView) rootView.findViewById(R.id.Head);
+            IV.setImageResource(R.drawable.yellow_head);
+            db.updateHead(Email);
+        }
+
+
         return rootView;
     }
 
     public void greenTorso()
     {
         GreenTorso = true;
+        ZeroTorso = false;
+    }
+
+    public void zeroTorso()
+    {
+        ZeroTorso = true;
+        GreenTorso = false;
+    }
+
+    public void yellowHead()
+    {
+       YellowHead = true;
     }
 }

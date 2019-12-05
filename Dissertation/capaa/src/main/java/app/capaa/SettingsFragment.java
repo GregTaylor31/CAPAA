@@ -28,6 +28,9 @@ import androidx.fragment.app.FragmentManager;
 public class SettingsFragment extends Fragment {
 
     public Button button;
+    public Button button2;
+    public Button button5;
+
     public ImageView Head;
     public ImageView Torso;
     public ImageView ShopGreenTorso;
@@ -59,7 +62,9 @@ public class SettingsFragment extends Fragment {
 
     public interface Communicator
     {
-        public void communicateWith();
+        public void swapToGreenTorso();
+        public void swapToZeroTorso();
+        public void swapToYellowHead();
 
     }
 
@@ -73,23 +78,38 @@ public class SettingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ImageView head = (ImageView) getActivity().findViewById(R.id.item2);
-
-
+       // ImageView head = (ImageView) getActivity().findViewById(R.id.item2);
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        //green torso
         Button button = (Button) getActivity().findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // ImageView torso = (ImageView) getActivity().findViewById(R.id.Torso);
-                interfaceImplementor.communicateWith();
-
+                interfaceImplementor.swapToGreenTorso();
+            }
+        });
+        //zero torso
+        Button button5 = (Button) getActivity().findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                interfaceImplementor.swapToZeroTorso();
+            }
+        });
+        //yellow head
+        Button button2 = (Button) getActivity().findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                interfaceImplementor.swapToYellowHead();
             }
         });
     }
+
+
 }

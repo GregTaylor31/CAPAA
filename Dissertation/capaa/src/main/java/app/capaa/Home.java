@@ -43,28 +43,73 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
     private SensorManager sensorManager;
     //private TextView count;
     boolean activityRunning;
-    private Context ctx;
+    //private Context ctx;
     private TextView stepsView;
     private int steps =0;
-    private int Initials;
-    private Button ClearSteps;
+   // private int Initials;
+   // private Button ClearSteps;
     DatabaseHelper db;
+    Boolean HasGreenTorso = false;
+    Boolean HasZeroTorso = false;
+    Boolean HasYellowHead = false;
 
-    private int stepCounter = 0;
-    private int counterSteps = 0;
-    private int stepDetector = 0;
-
-    public void communicateWith() {
-        if (getStepsFromDB()>= 20){
-            avatarFragment.greenTorso();
-            updateDatabaseSteps(20,0);
-            setStepstoTextView(getStepsFromDB());
-            Toast.makeText(getApplicationContext(), "Purchase successful!", Toast.LENGTH_SHORT).show();
+    public void swapToGreenTorso() {
+        if(HasGreenTorso == false){
+            if (getStepsFromDB() >= 20) {
+                avatarFragment.greenTorso();
+                updateDatabaseSteps(20, 0);
+                setStepstoTextView(getStepsFromDB());
+                Toast.makeText(getApplicationContext(), "Purchase successful!", Toast.LENGTH_SHORT).show();
+                HasGreenTorso = true;
+                HasZeroTorso = false;
+            } else {
+                Toast.makeText(getApplicationContext(), "Not enough steps to purchase!", Toast.LENGTH_SHORT).show();
+            }
         }
-        else{
-            Toast.makeText(getApplicationContext(), "Not enough steps to purchase!", Toast.LENGTH_SHORT).show();
+        else {
+            Toast.makeText(getApplicationContext(), "You already have a green Torso silly!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void swapToZeroTorso() {
+        if(HasZeroTorso == false) {
+            if (getStepsFromDB() >= 10) {
+                avatarFragment.zeroTorso();
+                updateDatabaseSteps(10, 0);
+                setStepstoTextView(getStepsFromDB());
+                Toast.makeText(getApplicationContext(), "Purchase successful!", Toast.LENGTH_SHORT).show();
+                HasGreenTorso = false;
+                HasZeroTorso = true;
+            } else {
+                Toast.makeText(getApplicationContext(), "Not enough steps to purchase!", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "You already have a Zero Torso silly!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void swapToYellowHead() {
+        if(HasYellowHead == false) {
+            if (getStepsFromDB() >= 10000) {
+                avatarFragment.yellowHead();
+                updateDatabaseSteps(10000, 0);
+                setStepstoTextView(getStepsFromDB());
+                Toast.makeText(getApplicationContext(), "Purchase successful!", Toast.LENGTH_SHORT).show();
+                HasYellowHead = true;
+            } else {
+                Toast.makeText(getApplicationContext(), "Not enough steps to purchase!", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "You already have a Yellow Head silly!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,7 +240,7 @@ public class Home extends AppCompatActivity implements SettingsFragment.Communic
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        Sensor stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+        //Sensor stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
 
         //if(activityRunning){
            // getStepsFromDB();

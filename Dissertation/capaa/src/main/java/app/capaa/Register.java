@@ -65,23 +65,24 @@ public class Register extends AppCompatActivity
                 String s2 = Password.getText().toString();
                 String s3 = ConfirmPassword.getText().toString();
 
-
+                //checks all fields are filled
                 if(s1.equals("")||s2.equals("")||s3.equals("")){
                     Toast.makeText(getApplicationContext(),"Fields are empty!", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    //checks for valid email in terms of characters
                     if (isEmailValid(s1)) {
-
-                        if (s2.equals(s3)) {  //passwords match
+                        //checks if password and confirm password match
+                        if (s2.equals(s3)) {
                             Boolean checkEmail = db.checkEmail(s1);
-
+                            //check if terms and conditions radio button is clicked
                             if (TCbuttonClicked) {
-
+                                // if valid email, insert to email and password (and steps) to user table
                                 if (checkEmail) {
                                     Boolean insert = db.insert(s1, s2, 0);
                                     db.insertAvatar(s1);
                                     Toast.makeText(getApplicationContext(), "Registration Successful!", Toast.LENGTH_SHORT).show();
-                                    Intent accountsIntent = new Intent(Register.this, Home.class); //error?
+                                    Intent accountsIntent = new Intent(Register.this, Home.class);
                                     startActivity(accountsIntent);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Email Already exists", Toast.LENGTH_SHORT).show();
